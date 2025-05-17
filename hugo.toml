@@ -1,0 +1,4 @@
+baseURL = 'https://docs.jeejy.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'ananke'
