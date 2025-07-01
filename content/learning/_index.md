@@ -1,40 +1,44 @@
-## 5. Learning Material Template
-
-For learning content:
-
-```markdown
 ---
-title: "Tutorial: How to..."
-date: 2025-07-01T10:00:00Z
-draft: false
-description: "Learn how to..."
-tags: ["tutorial", "beginner"]
-categories: ["learning"]
-topics: ["programming", "web-development"]
-difficulty: "beginner" # beginner, intermediate, advanced
-featured_image: "/images/tutorial-image.jpg"
+title: "Learning Hub 🎓"
+description: "Comprehensive tutorials, guides, and educational resources"
+featured_image: "/images/learning-hero.jpg"
 ---
 
-# Tutorial: How to...
+# Welcome to the Learning Hub 🎓
 
-## Prerequisites
-- Basic knowledge of...
-- Required tools...
+Dive into a world of knowledge with our comprehensive tutorials and guides. Whether you're a beginner or looking to advance your skills, you'll find something valuable here.
 
-## What You'll Learn
-- Concept 1
-- Concept 2
-- Practical application
+## Featured Learning Paths
 
-## Step 1: Getting Started
-...
+<div class="learning-paths">
+  <div class="path-card">
+    <h3>🐍 Python Fundamentals</h3>
+    <p>Master Python from basics to advanced concepts</p>
+    <div class="progress-info">
+      <span>6 Lessons</span>
+      <span>Beginner</span>
+    </div>
+  </div>
+  
+  <div class="path-card">
+    <h3>🌐 Web Development</h3>
+    <p>Build modern websites with HTML, CSS, and JavaScript</p>
+    <div class="progress-info">
+      <span>12 Lessons</span>
+      <span>Intermediate</span>
+    </div>
+  </div>
+  
+  <div class="path-card">
+    <h3>⚛️ React & Modern JS</h3>
+    <p>Create interactive UIs with React and modern JavaScript</p>
+    <div class="progress-info">
+      <span>8 Lessons</span>
+      <span>Advanced</span>
+    </div>
+  </div>
+</div>
 
-## Step 2: Implementation
-...
+## Recent Tutorials
 
-## Conclusion
-...
-
-## Further Reading
-- [Link 1](url)
-- [Link 2](url)
+Below you'll find our latest tutorials and guides, organized by difficulty and topic.
