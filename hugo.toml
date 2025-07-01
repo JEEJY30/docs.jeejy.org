@@ -1,7 +1,62 @@
-baseURL = 'https://docs.jeejy.org/'
+baseURL = 'https://docs.jeejy.org'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Your Name - Blog & Learning Hub'
 theme = 'ananke'
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
+
+# Enable syntax highlighting for code blocks
+pygmentsCodeFences = true
+pygmentsStyle = "github"
+
+# Pagination
+paginate = 10
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    name = "Learning"
+    url = "/learning/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+# Site parameters
+[params]
+  author = "Your Name"
+  description = "Personal blog and learning materials"
+  favicon = "favicon.ico"
+  site_logo = ""
+  background_color_class = "bg-black"
+  featured_image = "/images/hero-bg.jpg"
+  recent_posts_number = 3
+  
+  # Social media links
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/JEEJY30"
+  [[params.social]]
+    name = "Twitter"
+    url = "https://twitter.com/jeejy30"
+  [[params.social]]
+    name = "LinkedIn"
+    url = "https://linkedin.com/in/jeejy30"
+
+# Taxonomies for organizing content
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+  topic = "topics"
