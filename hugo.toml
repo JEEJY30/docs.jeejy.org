@@ -1,16 +1,13 @@
 baseURL = 'https://docs.jeejy.org'
 languageCode = 'en-us'
-title = 'Your Name - Blog & Learning Hub'
+title = 'JEEJY - Blog & Learning Hub'
 theme = 'ananke'
-
-# Enable syntax highlighting for code blocks
 pygmentsCodeFences = true
 pygmentsStyle = "github"
 
 [pagination]
   pagerSize = 10
 
-# Menu configuration
 [menu]
   [[menu.main]]
     name = "Home"
@@ -33,46 +30,41 @@ pygmentsStyle = "github"
     url = "/contact/"
     weight = 5
 
-# Site parameters
-[params]
-  author = "Your Name"
-  description = "Personal blog and learning materials"
-  favicon = "favicon.ico"
-  site_logo = ""
-  background_color_class = "bg-black"
-  featured_image = "/images/hero-bg.jpg"
-  recent_posts_number = 3
-  
-  # Social media links
-  [[params.social]]
-    name = "GitHub"
-    url = "https://github.com/JEEJY30"
-  [[params.social]]
-    name = "Twitter"
-    url = "https://twitter.com/jeejy30"
-  [[params.social]]
-    name = "LinkedIn"
-    url = "https://linkedin.com/in/jeejy30"
-
-# Taxonomies for organizing content
 [taxonomies]
   tag = "tags"
   category = "categories"
   series = "series"
   topic = "topics"
 
-  # Add custom CSS and JS
 [params]
+  author = "JEEJY"
+  description = "Personal blog and learning materials"
+  favicon = "favicon.ico"
+  site_logo = ""
+  background_color_class = "bg-black"
+  featured_image = "/images/hero-bg.jpg"
+  recent_posts_number = 3
   custom_css = ["assets/css/custom.css"]
   custom_js = ["assets/js/main.js"]
-  
-  # Enable features
   reading_time = true
   share_buttons = true
   toc = true
   
-  # Social sharing
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/JEEJY30"
+  [[params.social]]
+    name = "Twitter"
+    url = "https://twitter.com/yourusername"
+  [[params.social]]
+    name = "LinkedIn"
+    url = "https://linkedin.com/in/yourusername"
+
   [params.social_share]
     twitter = true
     linkedin = true
     facebook = true
+
+[module]
+  [[module.imports]]
+    path = "github.com/theNewDynamic/gohugo-theme-ananke"
