@@ -60,3 +60,19 @@ pygmentsStyle = "github"
   category = "categories"
   series = "series"
   topic = "topics"
+
+  # Add custom CSS and JS
+[params]
+  custom_css = ["assets/css/custom.css"]
+  custom_js = ["assets/js/main.js"]
+  
+  # Enable features
+  reading_time = true
+  share_buttons = true
+  toc = true
+  
+  # Social sharing
+  [params.social_share]
+    twitter = true
+    linkedin = true
+    facebook = true

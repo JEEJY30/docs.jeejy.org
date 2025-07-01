@@ -1,0 +1,74 @@
+<!-- layouts/learning/list.html -->
+{{ define "main" }}
+<div class="learning-hub">
+  <header class="section-header">
+    <h1 class="gradient-text">🎓 Learning Hub</h1>
+    <p>Interactive tutorials and comprehensive guides</p>
+  </header>
+  
+  <div class="learning-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="beginner">Beginner</button>
+    <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+    <button class="filter-btn" data-filter="advanced">Advanced</button>
+  </div>
+  
+  <div class="learning-grid">
+    {{ range .Pages }}
+    <div class="learning-card" data-difficulty="{{ .Params.difficulty | default "beginner" }}">
+      {{ if .Params.featured_image }}
+      <div class="card-image">
+        <img src="{{ .Params.featured_image }}" alt="{{ .Title }}">
+        <div class="difficulty-badge {{ .Params.difficulty | default "beginner" }}">
+          {{ .Params.difficulty | default "Beginner" | title }}
+        </div>
+      </div>
+      {{ end }}
+      
+      <div class="card-content">
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Params.description | default .Summary }}</p>
+        
+        <div class="card-meta">
+          <span class="reading-time">{{ .ReadingTime }} min</span>
+          {{ if .Params.tags }}
+          <div class="card-tags">
+            {{ range first 2 .Params.tags }}
+            <span class="tag">#{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<script>
+// Learning filter functionality
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+    
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Filter cards
+    document.querySelectorAll('.learning-card').forEach(card => {
+      if (filter === 'all' || card.dataset.difficulty === filter) {
+        card.style.display = 'block';
+        card.classList.add('animate-in');
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+{{ end }}
