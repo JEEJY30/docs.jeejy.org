@@ -27,6 +27,10 @@ jobs:
         with:
           submodules: recursive
           
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+        
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
