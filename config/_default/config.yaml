@@ -1,0 +1,171 @@
+baseURL: "https://dod.jeejy.org/tech-blog/"
+title: "Advanced Tech Learning Platform"
+languageCode: "en"
+defaultContentLanguage: "en"
+enableRobotsTXT: true
+enableGitInfo: true
+enableEmoji: true
+hasCJKLanguage: false
+paginate: 10
+rssLimit: 20
+copyright: "© 2024 Your Name"
+googleAnalytics: "UA-XXXXXXXXX-X"
+disqusShortname: "your-disqus-shortname"
+
+# Advanced features
+enableInlineShortcodes: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+    - SearchIndex
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+    - RSS
+  term:
+    - HTML
+    - RSS
+
+outputFormats:
+  SearchIndex:
+    mediaType: "application/json"
+    baseName: "searchindex"
+    isPlainText: true
+    notAlternative: true
+
+# Permalinks
+permalinks:
+  posts: "/posts/:year/:month/:slug/"
+  tutorials: "/tutorials/:sections/:slug/"
+  projects: "/projects/:slug/"
+  snippets: "/snippets/:sections/:slug/"
+
+# Taxonomies
+taxonomies:
+  tag: tags
+  category: categories
+  series: series
+  technology: technologies
+  difficulty: difficulties
+
+# Security
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow: ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
+    osEnv: ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+
+# Minify
+minify:
+  minifyOutput: true
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+
+# Related content
+related:
+  includeNewer: true
+  indices:
+    - name: keywords
+      weight: 100
+    - name: tags
+      weight: 80
+    - name: categories
+      weight: 50
+    - name: date
+      weight: 10
+  threshold: 80
+  toLower: true
+
+# Markup
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: false
+    noHl: false
+    style: "dracula"
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 6
+    ordered: false
+    startLevel: 2
+
+# Services
+services:
+  googleAnalytics:
+    ID: "G-XXXXXXXXXX"
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
+
+# Privacy
+privacy:
+  disqus:
+    disable: false
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: false
+  instagram:
+    disable: false
+    simple: true
+  twitter:
+    disable: false
+    enableDNT: true
+    simple: true
+  vimeo:
+    disable: false
+    enableDNT: true
+    simple: true
+  youtube:
+    disable: false
+    privacyEnhanced: true
+
+# Sitemap
+sitemap:
+  changefreq: "weekly"
+  filename: "sitemap.xml"
+  priority: 0.5
+
+# Module configuration
+module:
+  mounts:
+    - source: "node_modules/prismjs"
+      target: "assets/prismjs"
+    - source: "node_modules/mermaid"
+      target: "assets/mermaid"

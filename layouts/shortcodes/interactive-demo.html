@@ -1,0 +1,27 @@
+{{ $src := .Get "src" }}
+{{ $height := .Get "height" | default "500" }}
+{{ $title := .Get "title" | default "Interactive Demo" }}
+
+<div class="interactive-demo">
+  <div class="demo-header">
+    <span class="demo-title">{{ $title }}</span>
+    <div class="demo-actions">
+      <button onclick="reloadDemo('{{ $src }}')" title="Reload">
+        <svg><!-- Reload icon --></svg>
+      </button>
+      <button onclick="openFullscreen('{{ $src }}')" title="Fullscreen">
+        <svg><!-- Fullscreen icon --></svg>
+      </button>
+      <button onclick="openInNewTab('{{ $src }}')" title="Open in new tab">
+        <svg><!-- External link icon --></svg>
+      </button>
+    </div>
+  </div>
+  <iframe 
+    src="{{ $src }}" 
+    height="{{ $height }}"
+    class="demo-iframe"
+    sandbox="allow-scripts allow-same-origin"
+    loading="lazy"
+  ></iframe>
+</div>

@@ -1,0 +1,38 @@
+webDevelopment:
+  title: "Full-Stack Web Development"
+  description: "Master modern web development from frontend to deployment"
+  progress: 65
+  modules:
+    - title: "Frontend Fundamentals"
+      description: "HTML, CSS, and JavaScript basics"
+      completed: true
+      lessons:
+        - title: "HTML5 Semantic Elements"
+          url: "/tutorials/web/html5-semantics/"
+          duration: "45 min"
+          completed: true
+        - title: "CSS Grid & Flexbox"
+          url: "/tutorials/web/css-layout/"
+          duration: "60 min"
+          completed: true
+        - title: "JavaScript ES6+"
+          url: "/tutorials/web/javascript-modern/"
+          duration: "90 min"
+          completed: true
+          
+    - title: "React & State Management"
+      description: "Build dynamic UIs with React"
+      completed: false
+      lessons:
+        - title: "React Fundamentals"
+          url: "/tutorials/web/react-basics/"
+          duration: "120 min"
+          completed: true
+        - title: "Hooks Deep Dive"
+          url: "/tutorials/web/react-hooks/"
+          duration: "90 min"
+          completed: false
+        - title: "State Management Patterns"
+          url: "/tutorials/web/state-management/"
+          duration: "75 min"
+          completed: false

@@ -1,0 +1,162 @@
+# Site params
+author:
+  name: "Giorgi Gorgodze"
+  email: "your.email@example.com"
+  bio: "Full-stack developer, open source enthusiast, and lifelong learner"
+  avatar: "/img/avatar.jpg"
+  social:
+    github: "jeejy30"
+    twitter: "yourusername"
+    linkedin: "yourusername"
+    stackoverflow: "userid"
+    dev: "yourusername"
+    medium: "@yourusername"
+
+# SEO
+description: "Advanced tech blog covering web development, DevOps, AI/ML, and software engineering best practices"
+keywords: ["web development", "programming", "software engineering", "devops", "machine learning"]
+images: ["/img/og-image.jpg"]
+
+# Feature flags
+features:
+  # Content features
+  showReadingTime: true
+  showWordCount: true
+  showLastUpdated: true
+  showGitInfo: true
+  showEditLink: true
+  editBaseURL: "https://github.com/jeejy30/tech-blog/edit/main/content"
+  
+  # UI features
+  darkMode: true
+  smoothScroll: true
+  readingProgress: true
+  backToTop: true
+  copyCode: true
+  searchEnabled: true
+  
+  # Social features
+  shareButtons: true
+  comments: true
+  reactions: true
+  newsletter: true
+  
+  # Advanced features
+  syntaxHighlighting: "prismjs"
+  mathSupport: true
+  diagramSupport: true
+  interactiveDemos: true
+  codePlayground: true
+  
+  # Performance
+  lazyLoadImages: true
+  optimizeImages: true
+  preloadFonts: true
+  pwa: true
+
+# Theme settings
+theme:
+  primary: "#0066cc"
+  secondary: "#6c757d"
+  accent: "#ff6b6b"
+  background: "#ffffff"
+  surface: "#f8f9fa"
+  text: "#212529"
+  muted: "#6c757d"
+  border: "#dee2e6"
+  
+  # Dark mode colors
+  dark:
+    background: "#0d1117"
+    surface: "#161b22"
+    text: "#c9d1d9"
+    muted: "#8b949e"
+    border: "#30363d"
+
+# Homepage sections
+homepage:
+  hero:
+    title: "Tech Learning Hub"
+    subtitle: "Exploring the depths of modern software development"
+    cta:
+      text: "Start Learning"
+      link: "/tutorials/"
+  
+  featured:
+    title: "Featured Content"
+    count: 3
+  
+  recent:
+    posts: 5
+    tutorials: 3
+    projects: 2
+  
+  skills:
+    show: true
+    title: "Tech Stack"
+  
+  newsletter:
+    title: "Stay Updated"
+    description: "Get weekly insights on web development and software engineering"
+
+# Content settings
+content:
+  # Series
+  series:
+    showInPost: true
+    showCompletionStatus: true
+  
+  # Code blocks
+  code:
+    maxHeight: "500px"
+    showLineNumbers: true
+    showLanguage: true
+    enableCopy: true
+    theme: "dracula"
+  
+  # Tables of contents
+  toc:
+    enable: true
+    auto: true
+    minHeadings: 3
+    maxHeadings: 6
+    keepStatic: true
+    
+  # Related posts
+  related:
+    enable: true
+    count: 5
+    
+  # Pagination
+  pagination:
+    size: 10
+    showFirst: true
+    showPrevious: true
+    showNext: true
+    showLast: true
+
+# Integrations
+integrations:
+  # Analytics
+  plausible:
+    domain: "yourdomain.com"
+    
+  # Search
+  algolia:
+    appId: "YOUR_APP_ID"
+    apiKey: "YOUR_API_KEY"
+    indexName: "your_index"
+    
+  # Comments
+  utterances:
+    repo: "yourusername/blog-comments"
+    issueTerm: "pathname"
+    theme: "github-light"
+    
+  # Code execution
+  codepen:
+    username: "yourusername"
+    
+  # Monitoring
+  sentry:
+    dsn: "YOUR_SENTRY_DSN"

@@ -1,0 +1,106 @@
+name: Deploy Hugo Advanced Blog
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 0' # Weekly rebuild for updates
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+          
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+          
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: |
+          npm ci
+          pip install -r requirements.txt
+          
+      - name: Build search index
+        run: |
+          python scripts/build-search-index.py
+          
+      - name: Optimize images
+        run: |
+          npm run optimize-images
+          
+      - name: Build site
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo --gc --minify
+          
+      - name: Generate sitemap
+        run: |
+          npm run generate-sitemap
+          
+      - name: Run tests
+        run: |
+          npm test
+          hugo check
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
+        
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Lighthouse Check
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            ${{ steps.deployment.outputs.page_url }}
+            ${{ steps.deployment.outputs.page_url }}/posts/
+            ${{ steps.deployment.outputs.page_url }}/tutorials/
+          uploadArtifacts: true
+          temporaryPublicStorage: true

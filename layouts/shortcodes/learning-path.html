@@ -1,0 +1,35 @@
+{{ $pathName := .Get 0 }}
+{{ $path := index .Site.Data.learningPaths $pathName }}
+
+<div class="learning-path">
+  <h3>{{ $path.title }}</h3>
+  <p>{{ $path.description }}</p>
+  
+  <div class="path-progress">
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: {{ $path.progress }}%"></div>
+    </div>
+    <span class="progress-text">{{ $path.progress }}% Complete</span>
+  </div>
+  
+  <div class="path-modules">
+    {{ range $index, $module := $path.modules }}
+      <div class="path-module {{ if $module.completed }}completed{{ end }}">
+        <div class="module-number">{{ add $index 1 }}</div>
+        <div class="module-content">
+          <h4>{{ $module.title }}</h4>
+          <p>{{ $module.description }}</p>
+          <div class="module-lessons">
+            {{ range $module.lessons }}
+              <a href="{{ .url }}" class="lesson {{ if .completed }}completed{{ end }}">
+                <span class="lesson-status"></span>
+                {{ .title }}
+                <span class="lesson-duration">{{ .duration }}</span>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>

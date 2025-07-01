@@ -1,0 +1,109 @@
+main:
+  - identifier: home
+    name: "Home"
+    url: "/"
+    weight: 10
+    
+  - identifier: posts
+    name: "Blog"
+    url: "/posts/"
+    weight: 20
+    params:
+      icon: "📝"
+    
+  - identifier: tutorials
+    name: "Tutorials"
+    url: "/tutorials/"
+    weight: 30
+    params:
+      icon: "📚"
+    hasChildren: true
+    
+  - identifier: tutorials-web
+    parent: tutorials
+    name: "Web Development"
+    url: "/tutorials/web/"
+    weight: 10
+    
+  - identifier: tutorials-devops
+    parent: tutorials
+    name: "DevOps"
+    url: "/tutorials/devops/"
+    weight: 20
+    
+  - identifier: tutorials-ml
+    parent: tutorials
+    name: "Machine Learning"
+    url: "/tutorials/ml/"
+    weight: 30
+    
+  - identifier: projects
+    name: "Projects"
+    url: "/projects/"
+    weight: 40
+    params:
+      icon: "🚀"
+    
+  - identifier: snippets
+    name: "Code Snippets"
+    url: "/snippets/"
+    weight: 50
+    params:
+      icon: "💻"
+    
+  - identifier: series
+    name: "Series"
+    url: "/series/"
+    weight: 60
+    params:
+      icon: "📖"
+    
+  - identifier: about
+    name: "About"
+    url: "/about/"
+    weight: 70
+    params:
+      icon: "👤"
+
+footer:
+  - identifier: rss
+    name: "RSS"
+    url: "/index.xml"
+    weight: 10
+    
+  - identifier: sitemap
+    name: "Sitemap"
+    url: "/sitemap.xml"
+    weight: 20
+    
+  - identifier: privacy
+    name: "Privacy"
+    url: "/privacy/"
+    weight: 30
+    
+  - identifier: terms
+    name: "Terms"
+    url: "/terms/"
+    weight: 40
+
+social:
+  - identifier: github
+    name: "GitHub"
+    url: "https://github.com/yourusername"
+    weight: 10
+    params:
+      icon: "github"
+      
+  - identifier: twitter
+    name: "Twitter"
+    url: "https://twitter.com/yourusername"
+    weight: 20
+    params:
+      icon: "twitter"
+      
+  - identifier: linkedin
+    name: "LinkedIn"
+    url: "https://linkedin.com/in/yourusername"
+    weight: 30
+    params:
+      icon: "linkedin"

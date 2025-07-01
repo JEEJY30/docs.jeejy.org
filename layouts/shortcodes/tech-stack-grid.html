@@ -1,0 +1,25 @@
+{{ $techs := .Site.Data.technologies }}
+<div class="tech-stack-grid">
+  {{ range .Params }}
+    {{ $tech := index $techs . }}
+    {{ if $tech }}
+      <div class="tech-card" data-category="{{ $tech.category }}">
+        <img src="{{ $tech.logo }}" alt="{{ $tech.name }}" class="tech-logo">
+        <h4>{{ $tech.name }}</h4>
+        <p>{{ $tech.description }}</p>
+        <div class="tech-meta">
+          <span class="tech-category">{{ $tech.category }}</span>
+          <span class="tech-level">{{ $tech.level }}</span>
+        </div>
+        {{ if $tech.projects }}
+          <div class="tech-projects">
+            <strong>Used in:</strong>
+            {{ range $tech.projects }}
+              <a href="/projects/{{ . }}">{{ . }}</a>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+</div>

@@ -1,0 +1,39 @@
+javascript:
+  name: "JavaScript"
+  logo: "/img/tech/javascript.svg"
+  category: "language"
+  level: "expert"
+  description: "Modern ES6+ JavaScript for web applications"
+  projects:
+    - "react-dashboard"
+    - "node-api-server"
+    
+typescript:
+  name: "TypeScript"
+  logo: "/img/tech/typescript.svg"
+  category: "language"
+  level: "advanced"
+  description: "Type-safe JavaScript for large-scale applications"
+  projects:
+    - "nextjs-blog"
+    - "express-api"
+    
+react:
+  name: "React"
+  logo: "/img/tech/react.svg"
+  category: "framework"
+  level: "expert"
+  description: "Component-based UI library"
+  projects:
+    - "react-dashboard"
+    - "mobile-app"
+    
+docker:
+  name: "Docker"
+  logo: "/img/tech/docker.svg"
+  category: "devops"
+  level: "advanced"
+  description: "Container platform for application deployment"
+  projects:
+    - "microservices-app"
+    - "kubernetes-cluster"

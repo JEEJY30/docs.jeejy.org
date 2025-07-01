@@ -1,0 +1,48 @@
+{
+  "name": "advanced-hugo-blog",
+  "version": "1.0.0",
+  "description": "Advanced tech blog and learning platform",
+  "scripts": {
+    "dev": "hugo server -D --navigateToChanged",
+    "build": "hugo --gc --minify",
+    "preview": "hugo server --minify --environment production",
+    "clean": "rm -rf public resources .hugo_build.lock",
+    "optimize-images": "node scripts/optimize-images.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "build-search-index": "node scripts/build-search-index.js",
+    "test": "npm run test:html && npm run test:css && npm run test:js",
+    "test:html": "html-validate public/**/*.html",
+    "test:css": "stylelint assets/scss/**/*.scss",
+    "test:js": "eslint assets/js/**/*.js",
+    "analyze": "webpack-bundle-analyzer public/js/stats.json",
+    "deploy": "npm run build && gh-pages -d public"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.53.0",
+    "html-validate": "^8.7.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.69.5",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "terser": "^5.24.0",
+    "workbox-cli": "^7.0.0"
+  },
+  "dependencies": {
+    "@alpinejs/intersect": "^3.13.2",
+    "@alpinejs/persist": "^3.13.2",
+    "alpinejs": "^3.13.2",
+    "fuse.js": "^7.0.0",
+    "lazysizes": "^5.3.2",
+    "lunr": "^2.3.9",
+    "mermaid": "^10.6.0",
+    "prismjs": "^1.29.0"
+  }
+}
