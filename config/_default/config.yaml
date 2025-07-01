@@ -1,6 +1,6 @@
 baseURL: "https://jeejy30.github.io/docs.jeejy.org/"
 title: "Advanced Tech Learning Platform"
-languageCode: "en"
+languageCode: "en-US"
 defaultContentLanguage: "en"
 enableRobotsTXT: true
 enableGitInfo: true
@@ -11,6 +11,11 @@ rssLimit: 20
 copyright: "© 2024 Your Name"
 googleAnalytics: "UA-XXXXXXXXX-X"
 disqusShortname: "your-disqus-shortname"
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
 
 # Advanced features
 enableInlineShortcodes: true
